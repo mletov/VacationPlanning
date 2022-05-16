@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+
+  applicationtier.api.organizationstructure:
+    image: ${DOCKER_REGISTRY-}applicationtierapiorganizationstructure
+    build:
+      context: .
+      dockerfile: src/ApplicationTier/ApplicationTier.API.OrganizationStructure/Dockerfile
+
+
+  applicationtier.api.staffing:
+    image: ${DOCKER_REGISTRY-}applicationtierapistaffing
+    build:
+      context: .
+      dockerfile: src/ApplicationTier/ApplicationTier.API.Staffing/Dockerfile
+
+
+  presentationtier.blazorui.server:
+    image: ${DOCKER_REGISTRY-}presentationtierblazoruiserver
+    build:
+      context: .
+      dockerfile: src/PresentationTier/PresentationTier.BlazorUI/Server/Dockerfile
+
